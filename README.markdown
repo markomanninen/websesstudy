@@ -21,7 +21,7 @@ But at some point you may get interested how things actually work on deeper leve
 
 ## Usage
 
-Before actual steps you need to have Clojure and Lein installed on your computer. Easiest way I know is to install [https://github.com/technomancy/leiningen/raw/stable/bin/lein this script] to you bin directory and simply run it. More instructions are found from: https://github.com/technomancy/leiningen
+Before actual steps you need to have Clojure and Lein installed on your computer. Easiest way I know is to install [this script](https://github.com/technomancy/leiningen/raw/stable/bin/lein) to you bin directory and simply run it. More instructions are found from: https://github.com/technomancy/leiningen
 
 After knowing how things work on Clojure you shouldn't find next few steps too difficult to follow and replicate my study case: 
 
