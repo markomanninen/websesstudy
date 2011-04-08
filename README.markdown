@@ -9,7 +9,7 @@ This is meant for the study of the first of my Clojure web application component
 
 While sessions on PHP are used from file system by default and the session variable ($_SESSION) is request and user scoped by default, I had to do much more work on Compojure web application to have same functionality. I had to create an atom map having keys made by session ids that every user carries over the page requests. Ring session middleware already have some of the functionality, probably the most because it can have options passed on handler, but I didn’t find necessary information how to use it, so in my approach I just use ring session wrapper to initialize session key on request and then I use it by my own functionality.
 
-Since this is my first Clojure program, I rather leave this as a study case and open for improvements and maybe throwing away if and when I find better, more straightforward way to do this. But for now, it work as I need it on my other project. Study is create on MacOSX, IntelliJ IDEA and deployed project tested on Ubuntu Linux. Commands can differ a bit when using Windows.
+Since this is my first Clojure program, I rather leave this as a study case and open for improvements and maybe throwing away if and when I find better, more straightforward way to do this. But for now, it work as I need it on my other project. Study is created on Mac OS X, IntelliJ IDEA and deployed project tested on Ubuntu Linux. Commands can differ a bit when using Windows.
 
 ### Newbies
 
@@ -29,7 +29,7 @@ After knowing how things work on Clojure you shouldn't find next few steps too d
 
 2. Modify your project.clj with text editor to include `[websesstudy "1.0.0-SNAPSHOT"]` on dependencies. You can see [comment part](https://github.com/mmstud/websesstudy/blob/master/project.clj) from github project file how it goes and where it goes. Please note the other part of the project file looks different, more simple on a new project.
 
-3. Run `$ lein deps`. This downloads all necessary files over the Internet. Please note, that lein command needs read and write permissions on your project directory so if you counter problems on downloading, most probably you need to add write rights to lib and other directories involved. Other option is to run `$ sudo lein deps` to overcome this problem. I probably had this problem only because I installed lein on /bin not ~/bin.
+3. Run `$ lein deps`. This downloads all necessary files over the Internet. Please note, that lein command needs read and write permissions on your project directory so if you counter problems on downloading, most probably you need to add write rights to lib and other directories involved. Other option is to run `$ sudo lein deps` to overcome this problem. I probably had this problem only because I installed lein on /bin not ~/bin which in turn doesnt exist in Mac by default.
 
 After getting all necessary libraries you can run `$ lein test` or `$ lein repl` and experiment with the code. Lein test evidently just checks over my codes with my own tests, so result isn’t that interesting, but you can perhaps learn some basics from test codes anyway.
 
