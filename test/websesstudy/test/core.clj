@@ -14,11 +14,16 @@
   (def request {:session {:sid sid}}))
 
 
+(defn delete-counter []
+  (session-bind sid (dissoc (session-bind sid) :count)))
+
+
 (defn init-counter [request]
   (session-set! request :count 0))
 
 
 (deftest test-get-counter
+  (delete-counter)
   (is (= 0 (get-counter request)) "Get counter should return 0 if there is no counter initialized before.")
   (counter request)
   (is (= 1 (get-counter request)) "Get counter should return 1 after calling counter.")
