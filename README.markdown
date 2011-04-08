@@ -2,9 +2,8 @@
 
 Clojure web application session study
 
-## Usage
 
-### Background
+## Background
 
 This is meant for the study of the first of my Clojure web application component namely user session manager. After having hard time to understand programming language itself I was struggling with session management the way I was used to use it before. Simple set key and value of almost any kind, set flash message(s) and pull them on next page load, having counters etc.
 
@@ -20,7 +19,7 @@ From PHP world its best to prepare on rather steep learning curve, because at th
 
 But at some point you may get interested how things actually work on deeper level and especially you may question, if some things are more sophisticated on other languages or platforms. My interest rose when I was designing flexible form creation and handling tool for prototyping. The work involved between configuration, object mapping and business logics seemed too much overlapping.
 
-### Step by step
+## Usage
 
 Before actual steps you need to have Clojure and Lein installed on your computer. Easiest way I know is to install [this script] (https://github.com/technomancy/leiningen/raw/stable/bin/lein) to you bin directory and simply run it. More instructions are found from: https://github.com/technomancy/leiningen
 
