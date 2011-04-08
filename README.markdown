@@ -27,7 +27,7 @@ After knowing how things work on Clojure you shouldn't find next few steps too d
 
 1. Create a project with `$ lein new "your-application-name"`. Please note you don’t need to download package from github at all when you do this. My first mistake with first Clojure experiment was to download package, then use lein and wonder what happened! Here you just use my libraries to create your own application starting from your application name. Ok, you could download github code and run my app by leaving step 1 and 2 off from the routine just starting from step 3. But then at the end, this is how most of the clojure installations are instructed and you should get familiar with it because development and deployment process relies heavily on it.
 
-2. Modify your project.clj with text editor to include websesstudy-1.0.0-SNAPSHOT on dependencies. Add :main key to have application execution point: websesstudy.core. You can see [example](https://github.com/mmstud/websesstudy/blob/master/project.clj) from github how it is done precisely.
+2. Modify your project.clj with text editor to include `[websesstudy "1.0.0-SNAPSHOT"]` on dependencies. Add :main key to have application execution point: websesstudy.core. You can see [example](https://github.com/mmstud/websesstudy/blob/master/project.clj) from github how it is done precisely.
 
 3. Run `$ lein deps`. This downloads all necessary files over the Internet. Please note, that lein command needs read and write permissions on your project directory so if you counter problems on downloading, most probably you need to add write rights to lib and other directories involved. Other option is to run `$ sudo lein deps` to overcome this problem.
 
