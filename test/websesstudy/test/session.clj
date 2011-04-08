@@ -75,8 +75,3 @@
   (let [message "flash message"]
     (flash request message)
     (is (= message (flash request)) "Initialized and returned flash value check")))
-
-
-;(deftest test-wrap-session-bind ;; FIXME: how to test?
-;  (init-test)
-;  (is false "No tests have been written."))

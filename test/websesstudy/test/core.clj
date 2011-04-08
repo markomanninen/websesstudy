@@ -42,14 +42,3 @@
 (deftest test-tasks ;; FIXME: write
   (is false "No tests have been written."))
 
-
-(deftest test-home ;; FIXME: write
-  (is false "No tests have been written."))
-
-
-(deftest test-index ;; FIXME: write
-  (is false "No tests have been written."))
-
-
-(deftest test-run ;; FIXME: write
-  (is false "No tests have been written."))

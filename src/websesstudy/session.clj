@@ -16,7 +16,7 @@
   ([sid] (session-bind sid (get @*STORE* sid {})))
   ([sid session]
     (swap! *STORE* assoc sid session)
-    (get @*STORE* sid)))
+    session))
 
 ; set user session id. should be called only once from sid-get because this
 ; initializes user session store with sid value only

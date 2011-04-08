@@ -21,7 +21,7 @@ But at some point you may get interested how things actually work on deeper leve
 
 ## Usage
 
-Before actual steps you need to have Clojure and Lein installed on your computer. Easiest way I know is to install [this script](https://github.com/technomancy/leiningen/raw/stable/bin/lein) to you bin directory and simply run it. More instructions are found from: https://github.com/technomancy/leiningen
+Before actual steps you need to have Clojure and Lein installed on your computer. Easiest way I know is to install [this script](https://github.com/technomancy/leiningen/raw/stable/bin/lein) to you ~/bin directory and simply run it. More instructions are found from: https://github.com/technomancy/leiningen
 
 After knowing how things work on Clojure you shouldn't find next few steps too difficult to follow and replicate my study case: 
 
@@ -29,7 +29,7 @@ After knowing how things work on Clojure you shouldn't find next few steps too d
 
 2. Modify your project.clj with text editor to include `[websesstudy "1.0.0-SNAPSHOT"]` on dependencies. You can see [comment part](https://github.com/mmstud/websesstudy/blob/master/project.clj) from github project file how it goes and where it goes. Please note the other part of the project file looks different, more simple on a new project.
 
-3. Run `$ lein deps`. This downloads all necessary files over the Internet. Please note, that lein command needs read and write permissions on your project directory so if you counter problems on downloading, most probably you need to add write rights to lib and other directories involved. Other option is to run `$ sudo lein deps` to overcome this problem.
+3. Run `$ lein deps`. This downloads all necessary files over the Internet. Please note, that lein command needs read and write permissions on your project directory so if you counter problems on downloading, most probably you need to add write rights to lib and other directories involved. Other option is to run `$ sudo lein deps` to overcome this problem. I probably had this problem only because I installed lein on /bin not ~/bin.
 
 After getting all necessary libraries you can run `$ lein test` or `$ lein repl` and experiment with the code. Lein test evidently just checks over my codes with my own tests, so result isn’t that interesting, but you can perhaps learn some basics from test codes anyway.
 
@@ -41,7 +41,7 @@ Running repl is one of the key activities on LISP like language application deve
 
 5. Next thing you need to do is load websesstudy core library: `(use 'websesstudy.core)`.
 
-6. Finally you need to evaluate server run function: `(run)` and point your browser to `http://localhost:8080/` to see the example application running on your local machine. Press ctrl-c to stop the server.
+6. Finally you need to evaluate server start up function: `(run)` and point your browser to `http://localhost:8080/` to see the example application running on your local machine. Press ctrl-c to stop the server.
 
 And this is the end of the study case.
 
