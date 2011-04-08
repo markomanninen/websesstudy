@@ -4,7 +4,7 @@
 
 ; memory store for session handling
 
-; TODO flush time 2h?
+; TODO flush time per user session: 2h?
 (def *STORE* (atom {}))
 
 (def *empty-flash* "")

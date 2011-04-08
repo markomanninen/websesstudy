@@ -9,14 +9,15 @@
       [compojure.route :as route]
       [websesstudy.session :as ses]))
 
-; get counter function
+; get counter function. get only number, do not increment.
 (defn get-counter [request]
-    (ses/session-get request :count))
+    (ses/session-get request :count 0))
 
-; add counter function. increment by one everytime. start from 0
+; add counter function. increment by one every time. return value starts from 1.
 (defn counter [request]
-    (ses/session-set! request :count 
-        (inc (ses/session-get request :count 0))))
+    (let [c (inc (ses/session-get request :count 0))]
+        (ses/session-set! request :count c)
+        c))
 
 ; home html generator
 (defn home [request content]

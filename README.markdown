@@ -9,7 +9,7 @@ This is meant for the study of the first of my Clojure web application component
 
 While sessions on PHP are used from file system by default and the session variable ($_SESSION) is request and user scoped by default, I had to do much more work on Compojure web application to have same functionality. I had to create an atom map having keys made by session ids that every user carries over the page requests. Ring session middleware already have some of the functionality, probably the most because it can have options passed on handler, but I didn’t find necessary information how to use it, so in my approach I just use ring session wrapper to initialize session key on request and then I use it by my own functionality.
 
-Since this is my first Clojure program, I rather leave this as a study case and open for improvements and maybe throwing away if and when I find better, more straightforward way to do this. But for now, it work as I need it on my other project.
+Since this is my first Clojure program, I rather leave this as a study case and open for improvements and maybe throwing away if and when I find better, more straightforward way to do this. But for now, it work as I need it on my other project. Study is create on MacOSX, IntelliJ IDEA and deployed project tested on Ubuntu Linux. Commands can differ a bit when using Windows.
 
 ### Newbies
 
@@ -25,9 +25,9 @@ Before actual steps you need to have Clojure and Lein installed on your computer
 
 After knowing how things work on Clojure you shouldn't find next few steps too difficult to follow and replicate my study case: 
 
-1. Create a project with `$ lein new "your-application-name"`. Please note you don’t need to download package from github at all when you do this. My first mistake with first Clojure experiment was to download package, then use lein and wonder what happened! Here you just use my libraries to create your own application starting from your application name. Ok, you could download github code and run my app by leaving step 1 and 2 off from the routine just starting from step 3. But then at the end, this is how most of the clojure installations are instructed and you should get familiar with it because development and deployment process relies heavily on it.
+1. Create a project with `$ lein new "your-application-name"`. Please note you don’t need to download package from github at all when you do this. My first mistake with first Clojure experiment was to download package, then use lein and wonder what happened! Here you just use my libraries to create your own application starting from your application name. Ok, you could download github code and run my app by leaving step 1 and 2 off from the routine just starting from step 3. But then at the end, this is how most of the Clojure installations are instructed and you should get familiar with it because common development and deployment process relies heavily on it.
 
-2. Modify your project.clj with text editor to include `[websesstudy "1.0.0-SNAPSHOT"]` on dependencies. Add :main key to have application execution point: websesstudy.core. You can see [example](https://github.com/mmstud/websesstudy/blob/master/project.clj) from github how it is done precisely.
+2. Modify your project.clj with text editor to include `[websesstudy "1.0.0-SNAPSHOT"]` on dependencies. You can see [comment part](https://github.com/mmstud/websesstudy/blob/master/project.clj) from github project file how it goes and where it goes. Please note the other part of the project file looks different, more simple on a new project.
 
 3. Run `$ lein deps`. This downloads all necessary files over the Internet. Please note, that lein command needs read and write permissions on your project directory so if you counter problems on downloading, most probably you need to add write rights to lib and other directories involved. Other option is to run `$ sudo lein deps` to overcome this problem.
 
@@ -37,11 +37,11 @@ After getting all necessary libraries you can run `$ lein test` or `$ lein repl`
 
 Running repl is one of the key activities on LISP like language application development. Its in a way same than running PHP on interactive mode from command line, but some would say its totally different. Anyway you can experiment my study case by running a web server and see how sessions are working on your local browser.
 
-4a. Run `$ lein repl`
+4. Run `$ lein repl`
 
-4b. In case you didn’t define :main on project.clj next thing you need to do is change repl namespace to websesstudy core evaluating: `(in-ns 'websesstudy.core)`.
+5. Next thing you need to do is load websesstudy core library: `(use 'websesstudy.core)`.
 
-5. Then you need to evaluate server run function: `(run)` and point your browser to `http://localhost:8080/` to see the example application running on your local machine. Press ctrl-c to stop the server.
+6. Finally you need to evaluate server run function: `(run)` and point your browser to `http://localhost:8080/` to see the example application running on your local machine. Press ctrl-c to stop the server.
 
 And this is the end of the study case.
 
