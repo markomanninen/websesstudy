@@ -22,13 +22,13 @@
   (session-set! request :count 0))
 
 
-(deftest test-get-counter
+(deftest test-counter-get
   (delete-counter)
-  (is (= 0 (get-counter request)) "Get counter should return 0 if there is no counter initialized before.")
+  (is (= 0 (counter-get request)) "Get counter should return 0 if there is no counter initialized before.")
   (counter request)
-  (is (= 1 (get-counter request)) "Get counter should return 1 after calling counter.")
+  (is (= 1 (counter-get request)) "Get counter should return 1 after calling counter.")
   (counter request)
-  (is (= 2 (get-counter request)) "Should be 2 because get counter function is not allowed to increment count."))
+  (is (= 2 (counter-get request)) "Should be 2 because get counter function is not allowed to increment count."))
 
 
 (deftest test-counter

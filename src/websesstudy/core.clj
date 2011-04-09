@@ -10,12 +10,12 @@
       [websesstudy.session :as ses]))
 
 ; get counter function. get only number, do not increment.
-(defn get-counter [request]
+(defn counter-get [request]
     (ses/session-get request :count 0))
 
 ; add counter function. increment by one every time. return value starts from 1.
 (defn counter [request]
-    (let [c (inc (ses/session-get request :count 0))]
+    (let [c (inc (counter-get request))]
         (ses/session-set! request :count c)
         c))
 
@@ -26,7 +26,7 @@
     (html [:div.page {:style "padding: 10px"}
             ; create example application links
             [:a {:href "/dump"} "dump request"] [:br]
-            [:a {:href (str "/add/my task " (get-counter request))} "add task"] [:br]
+            [:a {:href (str "/add/my task " (counter-get request))} "add task"] [:br]
             [:a {:href "/tasks"} "tasks"] [:br]
             [:a {:href "/session/example-key/example value"} "set session key"]
                 [:span " format: /session/{any-key}/{any-value}"] [:br]
@@ -76,7 +76,7 @@
   ; this route shows tasks on session list.
   (GET "/tasks"             request (view-tasks request))
 
-  ; this route sets up a new task defined on url lie: /atask/My task #1. Creating a new one sets also the flash message.
+  ; this route sets up a new task defined on url like: /add/My task #1. Creating a new one sets also the flash message.
   (GET "/add/:task"         request (do (add-task request (:task (:params request)))
                                         (ses/flash request "Task added")
                                         (redirect "/tasks")))
@@ -84,7 +84,7 @@
   ; this is a default route for all the other page requests. note, that counter is still running even this route is executed.
   (route/not-found "Page not found"))
 
-; define application and use session wrapper middleware to enghange basic functionality for our purpose.
+; define application and use session wrapper middleware to enhance basic functionality for our purpose.
 (def app (-> index
              ses/wrap-session-bind))
 
